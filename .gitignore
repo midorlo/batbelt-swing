@@ -1,0 +1,7 @@
+#Maven
+/target
+
+#Intellij
+/.idea/jarRepositories.xml
+/.idea/vcs.xml
+/.idea/validation.xml
