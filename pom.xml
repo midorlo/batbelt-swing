@@ -7,11 +7,474 @@
     <groupId>com.midorlo</groupId>
     <artifactId>batbelt-swing</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <description>A bunch of things</description>
+    <url>https://github.com/midorlo/batbelt-swing</url>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>6.5.3</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!--            <plugin>-->
+            <!--                &lt;!&ndash; Deploy the site &ndash;&gt;-->
+            <!--                <groupId>com.github.github</groupId>-->
+            <!--                <artifactId>site-maven-plugin</artifactId>-->
+            <!--                <version>0.11</version>-->
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <goals>-->
+            <!--                            <goal>site</goal>-->
+            <!--                        </goals>-->
+            <!--                        <phase>site-deploy</phase>-->
+            <!--                        <configuration>-->
+            <!--                            <server>github</server>-->
+            <!--                            <message>Generating the site</message>-->
+            <!--                            <path>${site.path}</path>-->
+            <!--                            &lt;!&ndash; Use merge or override the content &ndash;&gt;-->
+            <!--                            <merge>true</merge>-->
+            <!--                        </configuration>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
+            <!--            </plugin>-->
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Midorlo Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/midorlo/batbelt-swing</url>
+        </repository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+            <version>1.21</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.9.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.8.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.8.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.8.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.github.homebeaver</groupId>
+            <artifactId>swingx-all</artifactId>
+            <version>1.6.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bidib.jbidib.swinglabs.swingx</groupId>
+            <artifactId>swingx-beaninfo</artifactId>
+            <version>1.6.5-1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.metawidget.modules</groupId>
+            <artifactId>metawidget-all</artifactId>
+            <version>4.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.miglayout</groupId>
+            <artifactId>miglayout-swing</artifactId>
+            <version>11.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.swinglabs</groupId>
+            <artifactId>swing-layout</artifactId>
+            <version>1.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.xmlgraphics</groupId>
+            <artifactId>batik-swing</artifactId>
+            <version>1.14</version>
+        </dependency>
+        <dependency>
+            <groupId>net.avh4.framework</groupId>
+            <artifactId>uilayer-swing</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.softsmithy.lib</groupId>
+            <artifactId>softsmithy-lib-swing</artifactId>
+            <version>2.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>net.java.dev.fuse</groupId>
+            <artifactId>fuse-swing</artifactId>
+            <version>0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>eu.cedarsoft.commons</groupId>
+            <artifactId>swing-presenter</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.buildsomethingawesome.lib</groupId>
+            <artifactId>awesome-java-swing</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-swing</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-swing</artifactId>
+            <version>3.17.1</version>
+        </dependency>
+        <dependency>
+            <groupId>net.anwiba.commons</groupId>
+            <artifactId>anwiba-commons-swing-icon</artifactId>
+            <version>1.1.158</version>
+        </dependency>
+        <dependency>
+            <groupId>org.tentackle</groupId>
+            <artifactId>tentackle-swing</artifactId>
+            <version>8.3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.vincenzopalazzo</groupId>
+            <artifactId>material-ui-swing</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.anrisoftware.prefdialog</groupId>
+            <artifactId>prefdialog-misc-swing</artifactId>
+            <version>3.7</version>
+        </dependency>
+        <dependency>
+            <groupId>tablelayout</groupId>
+            <artifactId>TableLayout</artifactId>
+            <version>20050920</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.griffon</groupId>
+            <artifactId>griffon-swing</artifactId>
+            <version>2.16.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.microemu</groupId>
+            <artifactId>microemu-javase-swing</artifactId>
+            <version>2.0.4</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.schlichtherle.truezip</groupId>
+            <artifactId>truezip-swing</artifactId>
+            <version>7.7.10</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.astrapi69</groupId>
+            <artifactId>swing-base-components</artifactId>
+            <version>1.2</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.rickyclarkson</groupId>
+            <artifactId>swingflow</artifactId>
+            <version>1.23</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mastfrog</groupId>
+            <artifactId>simplevalidation-swing</artifactId>
+            <version>1.14</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codeartisans.thirdparties.swing</groupId>
+            <artifactId>org-openide-util</artifactId>
+            <version>8.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.kordamp.ikonli</groupId>
+            <artifactId>ikonli-swing</artifactId>
+            <version>12.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jgoodies</groupId>
+            <artifactId>jgoodies-forms</artifactId>
+            <version>1.9.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jgoodies</groupId>
+            <artifactId>jgoodies-animation</artifactId>
+            <version>1.4.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.swinglabs/swingx -->
+        <dependency>
+            <groupId>org.swinglabs</groupId>
+            <artifactId>swingx</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.swinglabs/swingx -->
+        <dependency>
+            <groupId>org.swinglabs.swingx</groupId>
+            <artifactId>swingx-all</artifactId>
+            <version>1.6.5-1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.swinglabs.swingx</groupId>
+            <artifactId>swingx-beaninfo</artifactId>
+            <version>1.6.5-1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jgoodies</groupId>
+            <artifactId>jgoodies-common</artifactId>
+            <version>1.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jgoodies</groupId>
+            <artifactId>looks</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jgoodies</groupId>
+            <artifactId>jgoodies-binding</artifactId>
+            <version>2.13.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jgoodies</groupId>
+            <artifactId>jgoodies-validation</artifactId>
+            <version>2.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.formdev</groupId>
+            <artifactId>flatlaf</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!--                    -->
+        <!-- Broken/Unreachable -->
+        <!--                    -->
+
+        <!--        <dependency>-->
+        <!--            <groupId>it.tidalwave.thesefoolishthings</groupId>-->
+        <!--            <artifactId>it-tidalwave-swing-beansbinding</artifactId>-->
+        <!--            <version>2.6</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.kenai.swingjavabuilderext</groupId>-->
+        <!--            <artifactId>swingjavabuilder</artifactId>-->
+        <!--            <version>0.3</version>-->
+        <!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/net.sf.cssbox/swingbox -->
+        <!--        <dependency>-->
+        <!--            <groupId>net.sf.cssbox</groupId>-->
+        <!--            <artifactId>swingbox</artifactId>-->
+        <!--            <version>1.1</version>-->
+        <!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.buildsomethingawesome.lib/awesome-java-swing -->
+        <!-- https://mvnrepository.com/artifact/net.sf.javagimmicks/gimmicks-swing -->
+        <!--        <dependency>-->
+        <!--            <groupId>net.sf.javagimmicks</groupId>-->
+        <!--            <artifactId>gimmicks-swing</artifactId>-->
+        <!--            <version>0.99-alpha1</version>-->
+        <!--        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-swing -->
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.geotools/gt-swing &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.geotools</groupId>-->
+        <!--            <artifactId>gt-swing</artifactId>-->
+        <!--            <version>26.2</version>-->
+        <!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/eu.agrosense.client/util-swing -->
+        <!--        <dependency>-->
+        <!--            <groupId>eu.agrosense.client</groupId>-->
+        <!--            <artifactId>util-swing</artifactId>-->
+        <!--            <version>14.06-beta</version>-->
+        <!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/net.imagej/imagej-ui-swing -->
+        <!--        <dependency>-->
+        <!--            <groupId>net.imagej</groupId>-->
+        <!--            <artifactId>imagej-ui-swing</artifactId>-->
+        <!--            <version>0.22.0</version>-->
+        <!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.cytoscape/swing-util -->
+        <!--        <dependency>-->
+        <!--            <groupId>org.cytoscape</groupId>-->
+        <!--            <artifactId>swing-util</artifactId>-->
+        <!--            <version>3.0.0-alpha2</version>-->
+        <!--        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/org.assertj/assertj-swing -->
+
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.lds.stack.swing/stack-swing &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.lds.stack.swing</groupId>-->
+        <!--            <artifactId>stack-swing</artifactId>-->
+        <!--            <version>1.6.0</version>-->
+        <!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.geotoolkit.pending/geotk-widgets-swing-pending -->
+        <!--        <dependency>-->
+        <!--            <groupId>org.geotoolkit.pending</groupId>-->
+        <!--            <artifactId>geotk-widgets-swing-pending</artifactId>-->
+        <!--            <version>4.0-M1</version>-->
+        <!--            <scope>provided</scope>-->
+        <!--        </dependency>&lt;!&ndash; https://mvnrepository.com/artifact/net.anwiba.commons/anwiba-commons-swing-icon &ndash;&gt;-->
+
+        <!-- https://mvnrepository.com/artifact/org.tentackle/tentackle-swing -->
+
+        <!-- https://mvnrepository.com/artifact/io.github.vincenzopalazzo/material-ui-swing -->
+
+
+        <!-- https://mvnrepository.com/artifact/com.anrisoftware.prefdialog/prefdialog-misc-swing -->
+        <!-- https://mvnrepository.com/artifact/org.dockingframes/docking-frames-common -->
+        <!--        <dependency>-->
+        <!--            <groupId>org.dockingframes</groupId>-->
+        <!--            <artifactId>docking-frames-common</artifactId>-->
+        <!--            <version>1.1.2p6a</version>-->
+        <!--        </dependency>-->
+
+        <!--         https://mvnrepository.com/artifact/org.dockingframes/docking-frames-core -->
+        <!--        <dependency>-->
+        <!--            <groupId>org.dockingframes</groupId>-->
+        <!--            <artifactId>docking-frames-core</artifactId>-->
+        <!--            <version>1.1.2p6a</version>-->
+        <!--        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/tablelayout/TableLayout -->
+
+        <!-- https://mvnrepository.com/artifact/org.jdesktop/swing-layout -->
+        <!--        <dependency>-->
+        <!--            <groupId>org.jdesktop</groupId>-->
+        <!--            <artifactId>swing-layout</artifactId>-->
+        <!--            <version>1.0.2</version>-->
+        <!--        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/org.codehaus.griffon/griffon-swing -->
+
+        <!-- https://mvnrepository.com/artifact/org.pfsw/pf-swing -->
+        <!--        <dependency>-->
+        <!--            <groupId>org.pfsw</groupId>-->
+        <!--            <artifactId>pf-swing</artifactId>-->
+        <!--            <version>3.2.0</version>-->
+        <!--        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/org.microemu/microemu-javase-swing -->
+
+        <!-- https://mvnrepository.com/artifact/de.schlichtherle.truezip/truezip-swing -->
+        <!-- https://mvnrepository.com/artifact/io.github.astrapi69/swing-base-components -->
+        <!-- https://mvnrepository.com/artifact/org.jspresso/jspresso-swing-components -->
+        <!--        <dependency>-->
+        <!--            <groupId>org.jspresso</groupId>-->
+        <!--            <artifactId>jspresso-swing-components</artifactId>-->
+        <!--            <version>2.2.1</version>-->
+        <!--        </dependency>-->
+        <!--         https://mvnrepository.com/artifact/com.github.rickyclarkson/swingflow -->
+        <!-- https://mvnrepository.com/artifact/it.tidalwave.thesefoolishthings/it-tidalwave-swing-beansbinding -->
+        <!--        <dependency>-->
+        <!--            <groupId>it.tidalwave.thesefoolishthings</groupId>-->
+        <!--            <artifactId>it-tidalwave-swing-beansbinding</artifactId>-->
+        <!--            <version>2.6</version>-->
+        <!--        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/org.swinglabs/jxlayer -->
+        <!--        <dependency>-->
+        <!--            <groupId>org.swinglabs</groupId>-->
+        <!--            <artifactId>jxlayer</artifactId>-->
+        <!--            <version>3.0.4</version>-->
+        <!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.geotoolkit/geotk-widgets-swing -->
+        <!--        <dependency>-->
+        <!--            <groupId>org.geotoolkit</groupId>-->
+        <!--            <artifactId>geotk-widgets-swing</artifactId>-->
+        <!--            <version>4.0-M3</version>-->
+        <!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/com.mastfrog/simplevalidation-swing -->
+        <!-- https://mvnrepository.com/artifact/org.codeartisans.thirdparties.swing/org-openide-util -->
+        <!-- https://mvnrepository.com/artifact/org.codeartisans.thirdparties.swing/org-openide-util -->
+
+        <!-- https://mvnrepository.com/artifact/org.swinglabs/swingx-beaninfo -->
+        <!--        <dependency>-->
+        <!--            <groupId>org.swinglabs</groupId>-->
+        <!--            <artifactId>swingx-beaninfo</artifactId>-->
+        <!--            <version>1.6.2-2</version>-->
+        <!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/io.github.astrapi69/swing-base-components -->
+        <!-- https://mvnrepository.com/artifact/org.kordamp.ikonli/ikonli-swing -->
+
+        <!-- https://mvnrepository.com/artifact/com.jgoodies/forms -->
+        <!-- https://mvnrepository.com/artifact/com.jgoodies/jgoodies-common -->
+        <!-- https://mvnrepository.com/artifact/com.jgoodies/looks -->
+
+        <!-- https://mvnrepository.com/artifact/com.jgoodies/jgoodies-binding -->
+
+        <!-- https://mvnrepository.com/artifact/com.jgoodies/jgoodies-validation -->
+        <!--        <dependency>-->
+        <!--            <groupId>io.github.jonestimd</groupId>-->
+        <!--            <artifactId>swing-extensions</artifactId>-->
+        <!--            <version>1.4.0</version>-->
+        <!--        </dependency>-->
+
+
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>clojars</id>
+            <name>Clojars</name>
+            <url>https://repo.clojars.org/</url>
+        </repository>
+    </repositories>
 
 
 </project>
