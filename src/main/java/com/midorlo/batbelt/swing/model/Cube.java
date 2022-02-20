@@ -8,12 +8,11 @@ public class Cube {
     private Integer x;
     private Integer y;
     private Integer z;
+    private Integer w = 100;
+    private Integer h = 150;
+    private Integer d = 100;
 
-    private Integer width  = 100;
-    private Integer height = 150;
-    private Integer depth  = 100;
-
-    private Boolean filtered = false;
+    private String title = "Cube";
 
     public Cube(Integer x, Integer y, Integer z) {
 

@@ -6,7 +6,7 @@ import com.midorlo.batbelt.swing.util.ModelFactory;
 
 import javax.swing.*;
 
-public class App {
+public class AppBatbeltSwing {
 
     public static void main(String[] args) {
 

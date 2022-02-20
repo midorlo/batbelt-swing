@@ -1,27 +1,45 @@
 package com.midorlo.batbelt.swing.ui;
 
 import com.midorlo.batbelt.swing.model.Cube;
+import com.midorlo.batbelt.swing.ui.property.ComponentState;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 
-public class CubeUI extends JPanel {
+@Data
+@EqualsAndHashCode(callSuper = true)
+public class CubeUI extends JToggleButton {
 
-    private final Cube cube;
+    private Cube           cube;
+    private ComponentState componentState = new ComponentState();
 
     public CubeUI(Cube cube) {
-        this.cube = cube;
-        setLayout(new BorderLayout());
-        setPreferredSize(new Dimension(cube.getWidth(),cube.getHeight()));
 
-        setBorder(new TitledBorder(getTitleString()));
+        this();
+        setCube(cube);
     }
 
-    private String getTitleString() {
-        return String.format("X: %s Y: %s Z: %s",
-                             cube.getX(),
-                             cube.getY(),
-                             cube.getZ());
+    public CubeUI() {
+
+        setPreferredSize(new Dimension(100, 150));
+        setLayout(new BorderLayout());
+    }
+
+    public void setCube(@NotNull Cube cube) {
+
+        this.cube = cube;
+        setPreferredSize(new Dimension(cube.getW(), cube.getH()));
+        setBorder(new TitledBorder(getTitle()));
+    }
+
+    private String getTitle() {
+
+        return (cube != null)
+               ? String.format("X: %s Y: %s Z: %s", cube.getX(), cube.getY(), cube.getZ())
+               : "Empty";
     }
 }
