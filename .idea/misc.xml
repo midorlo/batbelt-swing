@@ -5,6 +5,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECTS_DIRECTORY$/neu/jGrid-PictureViewer/pom.xml" />
       </list>
     </option>
   </component>
